@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DEMO 演示使用方法</title>
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="yanchi.js"></script>
+    <script>
+        //代码运行在文档完全加载的情况下        $(function () {            //定义对象
+            var y = new YanChi();
+            //绑定对象
+            y.init(".callback", 100);
+            //回调函数
+            //current当前对象
+            //objects所有对象
+            y.callback(function (current, objects) {
+                //滚动到哪个对象就返回哪一个对象
+                //模拟工作过程
+                $.get("http://code.jquery.com/jquery-1.12.4.min.js", function () {
+                    current.html("已经加载");
+                });
+            });
+            y.load();
+
+
+            var YC2 = new YanChi();         
+            YC2.init(".waitInput", 100);
+            YC2.callback(function (current, objects) {
+                current.val("loaded");            });
+            YC2.load();
+        });
+    </script>
+    <style>
+        .callback { height: 100px; }
+    </style>
+</head>
+<body>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+    <div class="callback">
+        <img src="loading.gif" />
+    </div>
+
+    <input class="waitInput" value="loading" />
+    <input class="waitInput" value="loading" />
+    <input class="waitInput" value="loading" />
+    <input class="waitInput" value="loading" />
+    <input class="waitInput" value="loading" />
+</body>
+</html>

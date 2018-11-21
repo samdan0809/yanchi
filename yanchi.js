@@ -1,10 +1,11 @@
-﻿var YanChi = function () {
+﻿var YanChi = function (selector, range, attrName) {
     var self = this;
     var $;
     var objs, obj_h, coverClassName = "_yanchi";
     self.attrName = "data-original";
     self.selector = "img";
     self.range = 300;
+    
     self.ImgCallBack = function (img, imgs) {
         var originalUrl = "";
         img = $(img);
@@ -26,9 +27,13 @@
         self.selector = selector;
         if (range) self.range = range;
         if (attrName) self.attrName = attrName;
+        coverClassName += parseInt(Math.random() * 100);
         objs = $(selector), obj_h = objs.height();
         objs.addClass(coverClassName);
 
+    }
+    this.load = function () {
+        load();
     }
     var clear = function () {
         objs = $("." + coverClassName);
